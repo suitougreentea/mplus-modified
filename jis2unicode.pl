@@ -1,4 +1,4 @@
-#!/usr/bin/env jperl
+#!/usr/bin/perl
 # -*-Perl-*-
 # $Id: jis2unicode,v 1.4 2003/09/10 02:54:11 s42335 Exp $
 #

@@ -7,7 +7,7 @@ use open ":utf8";
 use File::Copy;
 use File::Path;
 
-die "usage: make <jis-base-regular-bdf> <iso-eng-regular-bdf> <iso-eng-bold-bdf> <append-chars-both-bdf>" unless @ARGV == 4;
+die "usage: perl make.pl <jis-base-regular-bdf> <iso-eng-regular-bdf> <iso-eng-bold-bdf> <append-chars-both-bdf>" unless @ARGV == 4;
 
 # make temp dir
 unless (-d "temp") {
@@ -21,11 +21,11 @@ foreach my $filename (@ARGV){
 
 # jis2unicode japan font
 print("Converting charset\n");
-my $result = system "perl jis2unicode -b < $ARGV[0] > temp/r0.bdf"; 
+my $result = system "perl jis2unicode.pl -b < $ARGV[0] > temp/r0.bdf"; 
 if($result != 0){die "Error converting charset";}
 
 print("Converting weight\n");
-$result = system "perl mkbold temp/r0.bdf > temp/b0.bdf";
+$result = system "perl mkbold.pl temp/r0.bdf > temp/b0.bdf";
 if($result != 0){die "Error converting weight";}
 
 copy @ARGV[1], "temp/r1.bdf" or die $!;
