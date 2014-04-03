@@ -2,6 +2,7 @@ mplus-modified
 ==============
 M+のビットマップフォントにPowerLineで使えるグリフを追加してPCF形式で出力するプログラム。
 生成されるフォントは、gnome-terminalでの利用を想定しています。
+現在10pxのみの対応です。
 
 Requirements
 ------------
