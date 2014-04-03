@@ -1,2 +1,3 @@
+*.pcf
 *.bdf
 !appendchars.bdf
