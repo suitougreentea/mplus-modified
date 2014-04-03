@@ -40,9 +40,9 @@ print("Processing bold\n");
 combineBDF("temp/b0.bdf","temp/b1.bdf","temp/append.bdf","bold");
 
 print("Converting BDF into PCF\n");
-$result = system "bdftopcf out-medium.bdf > out-medium.pcf";
+$result = system "bdftopcf mplus-modified-medium.bdf > mplus-modified-medium.pcf";
 if($result != 0){die "Error converting into PCF";}
-$result = system "bdftopcf out-bold.bdf > out-bold.pcf";
+$result = system "bdftopcf mplus-modified-bold.bdf > mplus-modified-bold.pcf";
 if($result != 0){die "Error converting into PCF";}
 
 rmtree(["temp"]) or die "Error deleting dir temp";
@@ -85,7 +85,7 @@ sub combineBDF{
   $header =~ s/WEIGHT_NAME .*/WEIGHT_NAME "$_[3]"/m;
   $header =~ s/FONT .*/FONT -mplus-modified-gothic-$_[3]-R-normal--10-100-75-75-C-100-iso10646-1/m;
 
-  open (FH, "> out-$_[3].bdf");
+  open (FH, "> mplus-modified-$_[3].bdf");
   print FH "STARTFONT 2.1\n$header"."CHARS $chars\n$chardata[0]"."$chardata[1]"."$chardata[2]ENDFONT\n";
   close(FH);
 }
