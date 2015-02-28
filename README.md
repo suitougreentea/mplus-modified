@@ -1,5 +1,8 @@
 mplus-modified
 ==============
+![Development status: Inactive](https://img.shields.io/badge/Development%20status-Inactive-red.svg)
+![Progress: Release](https://img.shields.io/badge/Progress-Release-brightgreen.svg)
+
 M+のビットマップフォントにPowerLineで使えるグリフを追加してPCF形式で出力するプログラム。
 生成されるフォントは、gnome-terminalでの利用を想定しています。
 現在10pxのみの対応です。
